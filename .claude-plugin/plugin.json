@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "drive-remote-terminal",
+  "displayName": "Drive Remote Terminal",
+  "description": "Operate and observe an interactive full-screen TUI on a REMOTE machine over tmux/screen + SSH by driving it like a human: type with send-keys, screenshot with capture-pane, in a type-wait-screenshot-read loop. For the Claude Code TUI, vim, top, curses installers, REPLs, or any program that needs a real PTY over SSH.",
+  "version": "1.0.0",
+  "author": {
+    "name": "88plug",
+    "email": "andrew@88plug.com"
+  },
+  "homepage": "https://github.com/88plug/drive-remote-terminal",
+  "repository": "https://github.com/88plug/drive-remote-terminal.git",
+  "license": "FSL-1.1-ALv2",
+  "keywords": [
+    "claude-code",
+    "tmux",
+    "screen",
+    "ssh",
+    "tui",
+    "remote",
+    "terminal",
+    "automation"
+  ]
+}
