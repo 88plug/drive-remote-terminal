@@ -44,6 +44,12 @@ screen has no `Enter`/`C-c` names; send the literal terminal bytes via `$'...'`:
 Send command **and** Enter in one call: `stuff $'ls -la\r'`. (caret notation `^M` also works,
 but `$'\r'` is unambiguous.)
 
+**Dash-safe alternative (no bash/zsh needed):** `stuff` interprets screen's OWN escapes —
+backslash-octal `\NNN` and caret `^X` — *inside an ordinary single-quoted string*,
+independent of the shell. So when `$'...'` isn't available (a `dash`/`sh` ssh login, no
+`bash -lc`), write the bytes natively: Enter `\015`, Ctrl-C `\003`, Esc `\033`, Tab `\011`,
+arrows `\033[A`/`[B`/`[C`/`[D` — e.g. `screen -S $N -p 0 -X stuff 'ls -la\015'`.
+
 ## The `stuff` size limit — the nastiest gotcha (VERIFIED)
 
 A single `stuff` is capped at **~756 bytes**, and overflow is **silently dropped in its

@@ -13,6 +13,20 @@
 - Target a specific window/pane with `session:window.pane` (e.g. `rc:0.0`); bare
   session name targets its active pane.
 
+## Pasting a MULTI-LINE block (don't stream newlines through send-keys)
+
+`send-keys` with embedded newlines submits each line *separately* — in a TUI composer that
+fires a partial submit per line and mangles the input. To paste a multi-line payload (a
+config file, a multi-line prompt, a script), load it into a buffer and paste it as one unit:
+
+```bash
+tmux load-buffer -b p /path/to/file        # or:  printf '%s' "$text" | tmux load-buffer -b p -
+tmux paste-buffer -d -b p -t rc            # -d deletes the buffer after pasting
+```
+
+Reserve `send-keys 'one line' Enter` for single lines plus an explicit submit. (Screen's
+equivalent is `readreg r FILE` + `paste r` — see `screen.md`.)
+
 ## Common named keys
 
 | Key name | Effect |
@@ -70,5 +84,10 @@ tmux resize-window -t NAME -x 240 -y 60      # resize after creation if needed
 - **One action at a time when unsure.** If the screen didn't change as expected, capture
   again after a longer sleep rather than firing another keystroke — double-input is the
   main way to desync a TUI.
-- **Servers persist.** A tmux server keeps running after your SSH session ends, so the
-  TUI and its state survive — that's the point. Clean up with `kill-session` when done.
+- **Servers *usually* persist — but not always.** A tmux server normally keeps running
+  after your SSH session ends, so the TUI and its state survive. **Exception:** a host with
+  systemd-logind `KillUserProcesses=yes` (and no lingering) reaps the server when the
+  session that started it closes — a multi-`ssh`-call drive then hits `no server running`.
+  Fixes: do the whole drive in one ssh call, use `ControlPersist`, or
+  `loginctl enable-linger`. (See SKILL.md "the tmux server vanished between SSH calls".)
+  Clean up with `kill-session` when done.
