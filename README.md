@@ -2,6 +2,8 @@
 
 # drive-remote-terminal
 
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/88plug/drive-remote-terminal)
+
 Teach Claude Code to operate an interactive full-screen terminal program (a TUI) on a remote machine over SSH — for people who automate work on servers, dev boxes, and headless hosts.
 
 [![plugin-validate](https://github.com/88plug/drive-remote-terminal/actions/workflows/plugin-validate.yml/badge.svg)](https://github.com/88plug/drive-remote-terminal/actions/workflows/plugin-validate.yml)
