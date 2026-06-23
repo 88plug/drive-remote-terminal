@@ -1,14 +1,12 @@
-<div align="center">
-
 # drive-remote-terminal
 
 Teach Claude Code to operate an interactive full-screen terminal program (a TUI) on a remote machine over SSH — for people who automate work on servers, dev boxes, and headless hosts.
 
 [![plugin-validate](https://github.com/88plug/drive-remote-terminal/actions/workflows/plugin-validate.yml/badge.svg)](https://github.com/88plug/drive-remote-terminal/actions/workflows/plugin-validate.yml)
-[![License: FSL-1.1-ALv2](https://img.shields.io/badge/license-FSL--1.1--ALv2-blue?style=flat)](LICENSE.md)
+[![License: FSL-1.1-ALv2](https://img.shields.io/badge/license-FSL--1.1--ALv2-blue?style=flat)](https://github.com/88plug/drive-remote-terminal/blob/main/LICENSE.md)
 [![Claude Code plugin](https://img.shields.io/badge/Claude%20Code-plugin-8A2BE2?style=flat)](https://github.com/88plug/claude-code-plugins)
-
-</div>
+[![Docs](https://img.shields.io/badge/docs-online-2ea44f?style=flat)](https://88plug.github.io/drive-remote-terminal/)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/88plug/drive-remote-terminal)
 
 ## Install
 
@@ -62,9 +60,9 @@ screenshot, never double-send on an unexpected screen, submit a stuck line with 
 standalone `Enter`, and confirm the program actually launched before sending keys
 (or they fall through to the shell).
 
-> [!TIP]
-> The wait step matters more than it looks. Capturing the pane before the app has
-> redrawn returns a stale screen, which leads the agent to act on the wrong state.
+!!! tip
+    The wait step matters more than it looks. Capturing the pane before the app has
+    redrawn returns a stale screen, which leads the agent to act on the wrong state.
 
 ## What it bundles
 
@@ -83,5 +81,5 @@ teaches.
 
 ## License
 
-[FSL-1.1-ALv2](LICENSE.md) © 2026 [88plug](https://github.com/88plug) —
+[FSL-1.1-ALv2](https://github.com/88plug/drive-remote-terminal/blob/main/LICENSE.md) © 2026 [88plug](https://github.com/88plug) —
 Functional Source License; converts to Apache 2.0 two years after each release.

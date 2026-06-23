@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+
+# OS / editor cruft
+.DS_Store
+
+# MkDocs build output
+site/
+
+
+# campaign sweep scripts — never commit
+scripts/sweep_r*.py
+eval_real_corpus.json
+.real_corpus_manifest.json
+eval_run_*.json
+EVAL_REPORT.md

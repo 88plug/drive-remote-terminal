@@ -10,14 +10,27 @@
   "homepage": "https://github.com/88plug/drive-remote-terminal",
   "repository": "https://github.com/88plug/drive-remote-terminal.git",
   "license": "FSL-1.1-ALv2",
+  "version": "2026.6.23",
   "keywords": [
     "claude-code",
+    "claude",
+    "anthropic",
+    "ai",
+    "llm",
+    "ai-agents",
+    "developer-tools",
+    "productivity",
+    "automation",
+    "cli",
+    "claude-code-plugin",
+    "claude-skills",
     "tmux",
     "screen",
     "ssh",
     "tui",
     "remote",
     "terminal",
-    "automation"
+    "pty",
+    "headless"
   ]
 }
