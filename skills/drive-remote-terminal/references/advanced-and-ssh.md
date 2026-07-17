@@ -144,7 +144,7 @@ emulator):
   line-oriented program, an expect tool is more robust.*
 
 **Fallback — no tmux on the remote box?** GNU `screen` does the same job and is a first-class
-alternative — see **`references/screen.md`** for the full verified playbook (raw-byte key
+alternative — see **[screen.md](screen.md)** for the full verified playbook (raw-byte key
 table, the ~750-byte `stuff` limit + `readreg`/`paste` workaround, `hardcopy` capture, idempotent
 sessions, and the sentinel-file run-and-wait since screen has no `wait-for`). Quick form:
 `screen -dmS s bash`, `screen -S s -p 0 -X stuff $'cmd\r'` (type), `screen -S s -p 0 -X hardcopy -h /tmp/out; cat /tmp/out` (screenshot). It renders TUIs like tmux; the only costs are raw-byte
