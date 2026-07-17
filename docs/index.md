@@ -11,8 +11,8 @@ Teach Claude Code to operate an interactive full-screen terminal program (a TUI)
 ## Install
 
 ```text
-/plugin marketplace add 88plug/drive-remote-terminal
-/plugin install drive-remote-terminal@drive-remote-terminal
+/plugin marketplace add 88plug/claude-code-plugins
+/plugin install drive-remote-terminal@88plug
 ```
 
 Or from a local clone:
@@ -20,7 +20,7 @@ Or from a local clone:
 ```text
 git clone https://github.com/88plug/drive-remote-terminal
 /plugin marketplace add ./drive-remote-terminal
-/plugin install drive-remote-terminal@drive-remote-terminal
+/plugin install drive-remote-terminal@88plug
 ```
 
 Requires `tmux` (or `screen`) and `ssh` on the path — all standard. No scripts, no MCP, no hooks: one skill that teaches a method.
