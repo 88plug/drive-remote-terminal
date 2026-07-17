@@ -2,6 +2,11 @@
 
 ## 2026.7.17
 
+- Skill: fold remote-driving lessons from session histories — wait-by-polling
+  (busy/ready + two-idle-read guard), stale-frame false-negatives, launch
+  assert-or-abort, first-launch gauntlet, unattended detached jobs, SSH
+  BatchMode/heredoc traps, env via environment.d, load-buffer multi-line paste,
+  screen native escapes (references updated).
 - Quality waves (post-initial): rolling-calver regime (hub computes version from
   commit count; no static `version` in plugin.json); CI `setup-python` v6.3.0 +
   runner fallback; fleet ruff check/format + pyright green; Dependabot + MkDocs
