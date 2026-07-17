@@ -1,11 +1,19 @@
 {
   "name": "drive-remote-terminal",
   "source": {
-    "source": "github",
-    "repo": "88plug/drive-remote-terminal"
+    "source": "url",
+    "url": "https://github.com/88plug/drive-remote-terminal.git"
   },
   "description": "Drive an interactive full-screen TUI on a remote machine over tmux/screen + SSH like a human: type with send-keys, screenshot with capture-pane, loop. For the Claude Code TUI, vim, top, installers, REPLs, curses menus over SSH.",
   "category": "productivity",
-  "tags": ["type:plugin", "tmux", "screen", "ssh", "tui", "remote", "automation"],
+  "tags": [
+    "type:plugin",
+    "tmux",
+    "screen",
+    "ssh",
+    "tui",
+    "remote",
+    "automation"
+  ],
   "homepage": "https://github.com/88plug/drive-remote-terminal"
 }
