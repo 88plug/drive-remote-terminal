@@ -2,16 +2,19 @@
 
 # drive-remote-terminal
 
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/88plug/drive-remote-terminal)
-
-Teach Claude Code to operate an interactive full-screen terminal program (a TUI) on a remote machine over SSH — for people who automate work on servers, dev boxes, and headless hosts.
+Drive interactive full-screen TUIs on a remote machine over SSH + tmux/screen with Claude Code — type, wait, screenshot, and read like a human at the terminal.
 
 [![plugin-validate](https://github.com/88plug/drive-remote-terminal/actions/workflows/plugin-validate.yml/badge.svg)](https://github.com/88plug/drive-remote-terminal/actions/workflows/plugin-validate.yml)
 [![License: FSL-1.1-ALv2](https://img.shields.io/badge/license-FSL--1.1--ALv2-blue?style=flat)](LICENSE)
-[![Claude Code plugin](https://img.shields.io/badge/Claude%20Code-plugin-8A2BE2?style=flat)](https://github.com/88plug/claude-code-plugins)
 [![Docs](https://img.shields.io/badge/docs-online-2ea44f?style=flat)](https://88plug.github.io/drive-remote-terminal/)
+[![Claude Code plugin](https://img.shields.io/badge/Claude%20Code-plugin-8A2BE2?style=flat)](https://github.com/88plug/claude-code-plugins)
+[![DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/88plug/drive-remote-terminal)
 
 </div>
+
+drive-remote-terminal is a Claude Code plugin skill for AI agents and developers who automate work on remote Linux servers, dev boxes, and headless hosts. It teaches the type → wait → screenshot → read loop so Claude can operate interactive terminal programs (TUIs) over SSH — the Claude Code TUI itself, vim, top/htop, curses installers, REPLs, and menus that need a real PTY.
+
+One-shot `ssh host 'cmd'` cannot drive a full-screen TUI: the session exits, pipes lack a PTY, and the agent is blind. This skill uses tmux (or GNU screen) for send-keys input and capture-pane screenshots. No scripts, no MCP server, no hooks — method only. Shell, devops, and CLI automation stay in the loop you already know.
 
 ## Install
 
@@ -20,15 +23,7 @@ Teach Claude Code to operate an interactive full-screen terminal program (a TUI)
 /plugin install drive-remote-terminal@88plug
 ```
 
-Or from a local clone:
-
-```text
-git clone https://github.com/88plug/drive-remote-terminal
-/plugin marketplace add ./drive-remote-terminal
-/plugin install drive-remote-terminal@88plug
-```
-
-Requires `tmux` (or `screen`) and `ssh` on the path — all standard. No scripts, no MCP, no hooks: one skill that teaches a method.
+Requires `tmux` (or `screen`) and `ssh` on the path — all standard.
 
 ## Quickstart
 
@@ -38,13 +33,21 @@ Once installed, ask Claude Code to drive a remote TUI:
 SSH into build-01 and run `htop`, then tell me which process is using the most memory.
 ```
 
-Claude starts a tmux session on the remote host, launches the program, captures the screen, reads it, and reports back — the same type-wait-look loop a human uses. You see a real rendering of the remote screen in the answer, not a blind command result.
+Claude starts a tmux session on the remote host, launches the program, captures the screen, reads it, and reports back. You see a real rendering of the remote screen in the answer, not a blind command result.
+
+## Features
+
+| Feature | Detail |
+| --- | --- |
+| Type → wait → screenshot → read | Core human-style loop for remote TUIs |
+| tmux primary path | `send-keys` to type, `capture-pane -p` to see |
+| GNU screen fallback | First-class when tmux is missing |
+| SSH transport notes | PTY rules, ControlMaster, auth, env gotchas |
+| Method skill only | No scripts, no MCP server, no hooks |
 
 ## The tmux loop
 
 You cannot drive a TUI with one-shot SSH. `ssh host 'cmd'` runs and exits. Piping into a full-screen program that needs a real PTY fails. This plugin uses tmux (or `screen` as a fallback) so the agent has both a way to type and eyes to see.
-
-The whole skill is one loop:
 
 | Step | What | Example |
 | --- | --- | --- |
@@ -112,12 +115,15 @@ One skill (`drive-remote-terminal`) ships three reference files the agent loads 
 | [GNU screen fallback](skills/drive-remote-terminal/references/screen.md) | No tmux on the box — raw-byte keys, `hardcopy`, `stuff` limits |
 | [Advanced SSH & sync](skills/drive-remote-terminal/references/advanced-and-ssh.md) | Connection reuse, deterministic wait, expect vs tmux decision guide |
 
-## What it bundles
+## Development
 
-- Method skill only — no scripts, no MCP server, no hooks
-- The type → wait → screenshot → read loop as the core technique
-- tmux primary path with a verified GNU `screen` substitute
-- SSH transport notes (PTY rules, `ControlMaster`, auth, env gotchas)
+Local clone for skill edits or offline install:
+
+```text
+git clone https://github.com/88plug/drive-remote-terminal
+/plugin marketplace add ./drive-remote-terminal
+/plugin install drive-remote-terminal@88plug
+```
 
 ## Contributing
 
