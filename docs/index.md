@@ -1,6 +1,6 @@
 # drive-remote-terminal
 
-Teach Claude Code to operate an interactive full-screen terminal program (a TUI) on a remote machine over SSH — for people who automate work on servers, dev boxes, and headless hosts.
+Drive remote interactive TUIs over SSH + tmux/screen — type, wait, screenshot, read. Claude Code & Grok plugin skill.
 
 [![plugin-validate](https://github.com/88plug/drive-remote-terminal/actions/workflows/plugin-validate.yml/badge.svg)](https://github.com/88plug/drive-remote-terminal/actions/workflows/plugin-validate.yml)
 [![License: FSL-1.1-ALv2](https://img.shields.io/badge/license-FSL--1.1--ALv2-blue?style=flat)](https://github.com/88plug/drive-remote-terminal/blob/main/LICENSE)
@@ -9,6 +9,8 @@ Teach Claude Code to operate an interactive full-screen terminal program (a TUI)
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/88plug/drive-remote-terminal)
 
 ## Install
+
+### Claude Code
 
 ```text
 /plugin marketplace add 88plug/claude-code-plugins
@@ -21,7 +23,6 @@ Teach Claude Code to operate an interactive full-screen terminal program (a TUI)
 grok plugin marketplace add 88plug/claude-code-plugins
 grok plugin install drive-remote-terminal@88plug --trust
 ```
-
 
 Or from a local clone:
 

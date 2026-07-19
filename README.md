@@ -2,7 +2,7 @@
 
 # drive-remote-terminal
 
-Drive interactive full-screen TUIs on a remote machine over SSH + tmux/screen with Claude Code — type, wait, screenshot, and read like a human at the terminal.
+Drive remote interactive TUIs over SSH + tmux/screen — type, wait, screenshot, read. Claude Code & Grok plugin skill.
 
 [![plugin-validate](https://github.com/88plug/drive-remote-terminal/actions/workflows/plugin-validate.yml/badge.svg)](https://github.com/88plug/drive-remote-terminal/actions/workflows/plugin-validate.yml)
 [![License: FSL-1.1-ALv2](https://img.shields.io/badge/license-FSL--1.1--ALv2-blue?style=flat)](LICENSE)
@@ -18,6 +18,8 @@ One-shot `ssh host 'cmd'` cannot drive a full-screen TUI: the session exits, pip
 
 ## Install
 
+### Claude Code
+
 ```text
 /plugin marketplace add 88plug/claude-code-plugins
 /plugin install drive-remote-terminal@88plug
@@ -29,7 +31,6 @@ One-shot `ssh host 'cmd'` cannot drive a full-screen TUI: the session exits, pip
 grok plugin marketplace add 88plug/claude-code-plugins
 grok plugin install drive-remote-terminal@88plug --trust
 ```
-
 
 Requires `tmux` (or `screen`) and `ssh` on the path — all standard.
 
