@@ -15,6 +15,14 @@ Teach Claude Code to operate an interactive full-screen terminal program (a TUI)
 /plugin install drive-remote-terminal@88plug
 ```
 
+### Grok Build
+
+```text
+grok plugin marketplace add 88plug/claude-code-plugins
+grok plugin install drive-remote-terminal@88plug --trust
+```
+
+
 Or from a local clone:
 
 ```text

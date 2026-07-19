@@ -23,6 +23,14 @@ One-shot `ssh host 'cmd'` cannot drive a full-screen TUI: the session exits, pip
 /plugin install drive-remote-terminal@88plug
 ```
 
+### Grok Build
+
+```text
+grok plugin marketplace add 88plug/claude-code-plugins
+grok plugin install drive-remote-terminal@88plug --trust
+```
+
+
 Requires `tmux` (or `screen`) and `ssh` on the path — all standard.
 
 ## Quickstart
