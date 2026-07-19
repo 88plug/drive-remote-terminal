@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026.7.19
+
+- README/docs: Title Case H1 (`Drive Remote Terminal`), bold dual-harness one-liner.
+- docs: fix skill reference links (MkDocs `reference/` paths; drop 404 `blob/main/reference/`).
+- docs: Features + Development above License; ship-bar commands under Development.
+
 ## 2026.7.17
 
 - Skill: fold remote-driving lessons from session histories — wait-by-polling

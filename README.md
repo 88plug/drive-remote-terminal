@@ -1,8 +1,8 @@
 <div align="center">
 
-# drive-remote-terminal
+# Drive Remote Terminal
 
-Drive remote interactive TUIs over SSH + tmux/screen — type, wait, screenshot, read. Claude Code & Grok plugin skill.
+**Drive remote interactive TUIs over SSH + tmux/screen — type, wait, screenshot, read. Claude Code & Grok plugin skill.**
 
 [![plugin-validate](https://github.com/88plug/drive-remote-terminal/actions/workflows/plugin-validate.yml/badge.svg)](https://github.com/88plug/drive-remote-terminal/actions/workflows/plugin-validate.yml)
 [![License: FSL-1.1-ALv2](https://img.shields.io/badge/license-FSL--1.1--ALv2-blue?style=flat)](LICENSE)
