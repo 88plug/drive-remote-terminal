@@ -89,7 +89,7 @@ Use this skill when the remote program **needs a real PTY and stays on screen**:
 - Tools with a batch/`--print` mode (e.g. `claude -p "..."`)
 - Anything that returns text and exits cleanly over plain SSH
 
-If the box has no tmux, GNU `screen` is a first-class fallback — see [GNU screen fallback](reference/screen.md). For heavy automation, connection reuse, or deterministic sync instead of `sleep`, see [Advanced SSH & sync](reference/advanced-and-ssh.md).
+If the box has no tmux, GNU `screen` is a first-class fallback — see [GNU screen fallback](https://github.com/88plug/drive-remote-terminal/blob/main/reference/screen.md). For heavy automation, connection reuse, or deterministic sync instead of `sleep`, see [Advanced SSH & sync](https://github.com/88plug/drive-remote-terminal/blob/main/reference/advanced-and-ssh.md).
 
 ## Safety
 
@@ -111,9 +111,9 @@ One skill (`drive-remote-terminal`) ships three reference files the agent loads 
 
 | Reference | When you need it |
 | --- | --- |
-| [tmux keys & capture-pane](reference/tmux-keys.md) | Named keys, `capture-pane` flags, session/pane management |
-| [GNU screen fallback](reference/screen.md) | No tmux on the box — raw-byte keys, `hardcopy`, `stuff` limits |
-| [Advanced SSH & sync](reference/advanced-and-ssh.md) | Connection reuse, deterministic wait, expect vs tmux decision guide |
+| [tmux keys & capture-pane](https://github.com/88plug/drive-remote-terminal/blob/main/reference/tmux-keys.md) | Named keys, `capture-pane` flags, session/pane management |
+| [GNU screen fallback](https://github.com/88plug/drive-remote-terminal/blob/main/reference/screen.md) | No tmux on the box — raw-byte keys, `hardcopy`, `stuff` limits |
+| [Advanced SSH & sync](https://github.com/88plug/drive-remote-terminal/blob/main/reference/advanced-and-ssh.md) | Connection reuse, deterministic wait, expect vs tmux decision guide |
 
 ## What it bundles
 
@@ -129,3 +129,23 @@ Issues and pull requests are welcome. Open an issue to discuss a change before s
 ## License
 
 [FSL-1.1-ALv2](https://github.com/88plug/drive-remote-terminal/blob/main/LICENSE) © 2026 [88plug](https://github.com/88plug) — Functional Source License; converts to Apache 2.0 two years after each release.
+
+## Features
+
+| Feature | Detail |
+| --- | --- |
+| Type → wait → screenshot → read | Core human-style loop for remote TUIs |
+| tmux primary path | `send-keys` to type, `capture-pane -p` to see |
+| GNU screen fallback | First-class when tmux is missing |
+| SSH transport notes | PTY rules, ControlMaster, auth, env gotchas |
+| Method skill only | No scripts, no MCP server, no hooks |
+
+## Development
+
+Local clone for skill edits or offline install:
+
+```text
+git clone https://github.com/88plug/drive-remote-terminal
+/plugin marketplace add ./drive-remote-terminal
+/plugin install drive-remote-terminal@88plug
+```

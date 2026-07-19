@@ -1,7 +1,5 @@
 site_name: Drive Remote Terminal
-site_description: >-
-  Teach Claude Code to operate an interactive full-screen terminal program (a TUI)
-  on a remote machine over SSH.
+site_description: 'Drive interactive full-screen TUIs on a remote machine over SSH + tmux/screen with Claude Code — type, wait, screenshot, and read like a human at the terminal.'
 site_url: https://88plug.github.io/drive-remote-terminal/
 repo_url: https://github.com/88plug/drive-remote-terminal
 repo_name: 88plug/drive-remote-terminal
